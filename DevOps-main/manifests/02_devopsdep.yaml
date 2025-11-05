@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: devopsdep
+  name: devopsdep
+  namespace: devops
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: devopsdep
+  template:
+    metadata:
+      labels:
+        app: devopsdep
+    spec:
+      containers:
+        - image: yogeshraheja/devopspython:8abaae31f79f8c844a71329dcb88a28a88e53475
+          name: devopspython
